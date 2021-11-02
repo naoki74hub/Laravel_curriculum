@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function posts() //hasMany型なので関数名は複数形にする。
+   {
+    return $this->hasMany('App\Post');//相方のモデルまでのディレクトリを記述する。
+   }
 }

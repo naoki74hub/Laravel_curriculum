@@ -12,7 +12,10 @@
        
    </head>
     <body>
+        @extends('layouts.app')
+        @section('content')
         <h1>Blog Name</h1>
+        <small>{{$post->user->name}}</small>
         <p class='edit'>[<a href="/posts/{{$post->id}}/edit">edit</a>]</p>
         <form action="/posts/{{$post->id}}" id="form_delete" method="post">
             @csrf
@@ -26,6 +29,7 @@
                 <p class="updated_at">{{$post->updated_at}}</p>
                 </div>
                  <div class="back"><a href="/">back</a></div> //
+                 @endsection
                  <script>
                  function deletePost(e) {
                      'use strict';
@@ -34,6 +38,7 @@
                      }
                  }
                  </script>
+                 
            </body>
            
 </html>
