@@ -5,7 +5,10 @@
         <title>Blog</title>
     </head>
     <body>
+        @extends('layouts.app')
+        @section('content')
         <h1>Blog Name</h1>
+        {{Auth::user()}}
         <form action="/posts" method="POST">
             @csrf
             <div class="title">
@@ -21,5 +24,6 @@
             <input type="submit" value="保存"/>
         </form>
         <div class="back">[<a href="/">back</a>]</div>
+        @endsection
     </body>
 </html>

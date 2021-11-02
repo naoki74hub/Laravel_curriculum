@@ -5,6 +5,8 @@
         <title>Blog</title>
     </head>
    <body>
+       @extends('layouts.app')
+       @section('content')
     <h1 class="title">編集画面</h1>
     <div class="content">
         <form action="/posts/{{ $post->id }}" method="POST">
@@ -22,6 +24,7 @@
         </form>
         <div class="back">[<a href="posts/{{$post->id}}">back</a>]</div>
 　　</div>
+　　@endsection
 </body>
 
 </html>
